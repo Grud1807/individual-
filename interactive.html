@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интерактивный модуль</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark"></span><span>Smart Home Project</span></a><div class="nav-wrap"><button class="menu-btn">Меню</button><nav class="nav-links"><a href="index.html">Главная</a><a href="about.html">Что такое умный дом</a><a href="problems.html">Проблемы</a><a href="future.html">Перспективы</a><a class="active" href="interactive.html">Интерактив</a><a href="project.html">О проекте</a></nav></div></div></header>
+<main class="page-shell"><div class="container">
+  <section class="section reveal visible">
+    <div class="section-head"><h2>Интерактивный модуль сайта</h2><p>Этот раздел делает проект не только информационным, но и вовлекающим: пользователь может собрать собственную систему умного дома и проверить, насколько она готова к проблемным ситуациям.</p></div>
+    <div class="interactive-layout">
+      <aside class="card module-list">
+        <span class="eyebrow"><span class="dot"></span> Шаг 1</span>
+        <h3 style="margin:14px 0 8px">Собери свой умный дом</h3>
+        <p class="small">Выбирай модули и смотри, как меняются комфорт, безопасность, энергоэффективность и общая стоимость системы.</p>
+        <div class="module-grid" id="module-list"></div>
+      </aside>
+
+      <div class="card game-board">
+        <div class="board-top">
+          <div>
+            <span class="eyebrow"><span class="dot"></span> Шаг 2</span>
+            <h3 style="margin:14px 0 8px">Текущая конфигурация</h3>
+          </div>
+          <div class="result-tag" id="resultTag">Сбалансированный умный дом</div>
+        </div>
+
+        <div class="board-house">
+          <div class="board-grid">
+            <div class="room" data-room="living"><h4>Гостиная</h4><p>Свет, голос, розетки</p></div>
+            <div class="room" data-room="hall"><h4>Прихожая</h4><p>Камеры, замки, датчики</p></div>
+            <div class="room" data-room="yard"><h4>Периметр</h4><p>Наружная безопасность</p></div>
+            <div class="room" data-room="bedroom"><h4>Спальня</h4><p>Климат и комфорт</p></div>
+            <div class="room" data-room="kitchen"><h4>Кухня</h4><p>Дым, протечка, управление</p></div>
+            <div class="room" data-room="bath"><h4>Санузел</h4><p>Контроль воды</p></div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-card"><div class="progress-head"><span>Комфорт</span><strong id="comfortVal">0%</strong></div><div class="bar"><span id="comfortBar" style="width:0%"></span></div></div>
+          <div class="progress-card"><div class="progress-head"><span>Безопасность</span><strong id="securityVal">0%</strong></div><div class="bar"><span id="securityBar" style="width:0%"></span></div></div>
+          <div class="progress-card"><div class="progress-head"><span>Энергоэффективность</span><strong id="ecoVal">0%</strong></div><div class="bar"><span id="ecoBar" style="width:0%"></span></div></div>
+          <div class="progress-card"><div class="progress-head"><span>Стоимость</span><strong id="costVal">0 ₽</strong></div></div>
+        </div>
+
+        <div class="result-box" style="margin-top:16px">
+          <div id="resultText">Система решает отдельные задачи, но ещё не даёт полноценного эффекта умного дома.</div>
+          <button class="btn btn-primary" id="testScenarioBtn" type="button">Проверить систему</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="card scenario-box">
+      <div class="section-head"><h2>Проверка на проблемные сценарии</h2><p>После сборки сайта можно запустить симуляцию и посмотреть, как выбранная конфигурация справляется с типичными трудностями умного дома.</p></div>
+      <div class="scenario-card">
+        <h3 id="scenarioTitle" style="margin-top:0">Сценарий</h3>
+        <p class="small" id="scenarioDesc">Описание сценария появится здесь.</p>
+        <div style="display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;margin-top:14px">
+          <span class="status warn" id="scenarioState">Проверка</span>
+          <strong id="scenarioScore">0 / 100</strong>
+        </div>
+      </div>
+      <div class="notice" id="scenarioAdvice">Рекомендация появится после проверки.</div>
+    </div>
+  </section>
+</div></main>
+<footer class="site-footer"><div class="container footer-box"><div>Кокузин Матвей Алексеевич • 10В класс • Гимназия №587</div><div>Куратор: Малярова Ольга Викторовна • 2026</div></div></footer>
+<button class="back-to-top">↑</button><script src="script.js"></script>
+</body>
+</html>
